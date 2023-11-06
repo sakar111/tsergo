@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tsergo/page_home.dart';
+import 'package:tsergo/widgets/color_gradient.dart';
 
 class TextInputField extends StatelessWidget {
   final String hintText;
@@ -46,23 +48,7 @@ class LoginPage extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFFF2D3FB), // Color at the top
-              Color(0xFFFDF9FF), // Color at the center
-              Color(0xFFFFFFFF), // Color at the bottom
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [
-              0.0,
-              0.5,
-              1.0,
-            ],
-          ),
-        ),
+      body: TsergoGradientContainer(
         child: SafeArea(
           child: Center(
             child: SingleChildScrollView(
@@ -126,7 +112,7 @@ class LoginPage extends StatelessWidget {
                           'Forgot Password?',
                           style: GoogleFonts.inter(
                             fontSize: 16.0,
-                            color: Color(0xFF8A2BE2),
+                            color: const Color(0xFF8A2BE2),
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.left,
@@ -137,29 +123,31 @@ class LoginPage extends StatelessWidget {
                       height: screenSize.height * 32 / 800,
                     ),
                     ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              const Color(0xFF8A2BE2)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
                           ),
-                          fixedSize: MaterialStateProperty.all<Size>(
-                            Size(screenSize.width * 101 / 360,
-                                screenSize.height * 44 / 800),
-                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF8A2BE2), // Background color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                        child: Text(
-                          'Sign In',
-                          style: GoogleFonts.inter(
-                            fontSize: 16.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )),
+                        fixedSize: Size(screenSize.width * 101 / 360,
+                            screenSize.height * 44 / 800),
+                      ),
+                      child: Text(
+                        'Sign In',
+                        style: GoogleFonts.inter(
+                          fontSize: 16.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       height: screenSize.height * 32 / 800,
                     ),

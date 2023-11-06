@@ -29,8 +29,19 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF8A2BE2)),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFFF2D3FB),
+          // backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+            fontSize: 30.0,
+            fontFamily: 'CustomFont',
+            color: Color(0xFF8A2BE2),
+          ),
+          centerTitle: true,
+          iconTheme: IconThemeData(size:38)
+        ),
       ),
       home: const LoginPage(),
       debugShowCheckedModeBanner: false,
