@@ -64,17 +64,15 @@ class LoginPage extends StatelessWidget {
                           0.35, // Adjust the width proportionally
                       height: screenSize.width *
                           0.35, // Maintain the same height as the width
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFFD9D9D9),
-                      ),
-                      child: Center(
+                      child: ClipOval(
                         child: Image.asset(
-                          'assets/your_logo.png', // Replace with your image path
+                          'assets/images/tsergo.png', // Replace with your image path
                           width: screenSize.width *
                               0.35, // Adjust the width proportionally
                           height: screenSize.width *
                               0.35, // Maintain the same height as the width
+                          fit: BoxFit
+                              .cover, // Crop and center the image within the circular container
                         ),
                       ),
                     ),
@@ -132,7 +130,8 @@ class LoginPage extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF8A2BE2), // Background color
+                        backgroundColor:
+                            const Color(0xFF8A2BE2), // Background color
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
