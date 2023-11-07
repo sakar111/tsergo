@@ -13,20 +13,11 @@ class BankTransfer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                spreadRadius: 3,
-                blurRadius: 3,
-                offset: const Offset(0, 3),
-              ),
-            ],
-          ),
+        Material(
+          elevation: 5, // Set the elevation (shadow)
+          shape: const CircleBorder(), // Set the shape to a circle
           child: InkWell(
-            onTap: (){},
+            onTap: () {},
             child: CircleAvatar(
               radius: screenSize.width * 22 / 360,
               backgroundColor: tsergoColor,
@@ -35,6 +26,7 @@ class BankTransfer extends StatelessWidget {
             ),
           ),
         ),
+
         // send the text to end of the row
         Text(
           'Bank\nTransfer',
