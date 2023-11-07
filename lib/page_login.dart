@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/home_page/page_home.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
+import 'package:tsergo/constants.dart';
+
 
 class TextInputField extends StatelessWidget {
   final String hintText;
@@ -131,7 +133,7 @@ class LoginPage extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
-                            const Color(0xFF8A2BE2), // Background color
+                            tsergoColor, // Background color
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
