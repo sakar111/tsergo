@@ -17,11 +17,12 @@ class TsergoGradientContainer extends StatelessWidget {
           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          stops: [
-            0.0,
-            0.5,
-            1.0,
-          ],
+          // stops: [
+          //   0.0,
+          //   0.5,
+          //   1.0,
+          //   1.0,
+          // ],
         ),
       ),
       child: SafeArea(

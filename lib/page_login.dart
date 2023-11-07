@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tsergo/page_home.dart';
+import 'package:tsergo/home_page/page_home.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 
 class TextInputField extends StatelessWidget {
