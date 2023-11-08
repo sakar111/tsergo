@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tsergo/constants.dart';
 import 'package:tsergo/routes/app_routes.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       routerConfig: router,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF8A2BE2)),
+        colorScheme: ColorScheme.fromSeed(seedColor: tsergoColor),
         useMaterial3: true,
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFFF2D3FB),

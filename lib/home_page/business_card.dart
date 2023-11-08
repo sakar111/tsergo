@@ -30,7 +30,8 @@ Widget businessImage(Size screenSize) {
 Widget businessDescription(int index) {
   return Expanded(
     child: Column(
-      crossAxisAlignment: index.isOdd?CrossAxisAlignment.start:CrossAxisAlignment.end,
+      crossAxisAlignment:
+          index.isOdd ? CrossAxisAlignment.start : CrossAxisAlignment.end,
       children: [
         Text(
           'Hotel Name',
@@ -39,17 +40,18 @@ Widget businessDescription(int index) {
             fontWeight: FontWeight.bold,
           ),
         ),
-         Text(
+        Text(
           'Location: City, Country',
           style: GoogleFonts.inter(fontSize: 14.0),
         ),
-         Text(
+        Text(
           'Price: \$100 per night',
           style: GoogleFonts.inter(fontSize: 14.0),
         ),
         const Spacer(),
         Row(
-          mainAxisAlignment: index.isOdd?MainAxisAlignment.end:MainAxisAlignment.start,
+          mainAxisAlignment:
+              index.isOdd ? MainAxisAlignment.end : MainAxisAlignment.start,
           children: [
             Text(
               '4.7',
@@ -75,33 +77,36 @@ class Businesses extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Card(
-        child: Material(
-            color: Colors.white,
-            elevation: 4.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: InkWell(
-              onTap: (){},
-              child: SizedBox(
-                height: screenSize.height * 120 / 800,
-                child: Padding(
-                    padding: EdgeInsets.all(
-                        screenSize.width * 0.03), // Adjust the padding as needed
-                    child: Row(
-                      children: index.isOdd
-                          ? [
-                              businessImage(screenSize),
-                              SizedBox(width: screenSize.width * 0.03),
-                              businessDescription(index),
-                            ]
-                          : [
-                              businessDescription(index),
-                              SizedBox(width: screenSize.width * 0.03),
-                              businessImage(screenSize),
-                            ],
-                    )),
+      child: Material(
+        color: Colors.white,
+        elevation: 4.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: InkWell(
+          onTap: () {},
+          child: SizedBox(
+            height: screenSize.height * 120 / 800,
+            child: Padding(
+              padding: EdgeInsets.all(
+                  screenSize.width * 0.03), // Adjust the padding as needed
+              child: Row(
+                children: index.isOdd
+                    ? [
+                        businessImage(screenSize),
+                        SizedBox(width: screenSize.width * 0.03),
+                        businessDescription(index),
+                      ]
+                    : [
+                        businessDescription(index),
+                        SizedBox(width: screenSize.width * 0.03),
+                        businessImage(screenSize),
+                      ],
               ),
-            )));
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

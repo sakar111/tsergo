@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:tsergo/constants.dart';
 import 'package:tsergo/home_page/add_new_business.dart';
 import 'package:tsergo/home_page/balance_box.dart';
 import 'package:tsergo/home_page/bank_transfer.dart';

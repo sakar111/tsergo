@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tsergo/home_page/page_home.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 import 'package:tsergo/constants.dart';
 
@@ -62,7 +61,7 @@ class LoginPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(
+                    SizedBox(
                       width: screenSize.width *
                           0.35, // Adjust the width proportionally
                       height: screenSize.width *
