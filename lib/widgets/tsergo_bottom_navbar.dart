@@ -3,7 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
 
 class TsergoBotomNavigationBar extends StatefulWidget {
-  const TsergoBotomNavigationBar({Key? key}) : super(key: key);
+  final int selectedIndex;
+  final Function(int) onItemTapped;
+  const TsergoBotomNavigationBar({super.key, required this.selectedIndex, required this.onItemTapped});
 
   @override
   State<TsergoBotomNavigationBar> createState() =>
@@ -11,13 +13,6 @@ class TsergoBotomNavigationBar extends StatefulWidget {
 }
 
 class _TsergoBotomNavigationBarState extends State<TsergoBotomNavigationBar> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,9 +45,9 @@ class _TsergoBotomNavigationBarState extends State<TsergoBotomNavigationBar> {
           label: 'Search',
         ),
       ],
-      currentIndex: _selectedIndex,
+      currentIndex: widget.selectedIndex,
       selectedItemColor: tsergoColor,
-      onTap: _onItemTapped,
+      onTap: widget.onItemTapped,
     );
   }
 }
