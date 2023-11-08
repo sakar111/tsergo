@@ -16,30 +16,33 @@ class TsergoLinkBankAccount extends StatelessWidget {
           borderRadius: BorderRadius.circular(
               10.0), // Adjust the radius for rounded edges
         ),
-        child: SizedBox(
-          height: screenSize.height * 36 / 800,
-          child: Padding(
-            padding: EdgeInsets.only(
-              left: 0.025 * screenSize.width,
-              right: 0.025 * screenSize.width,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Link bank account',
-                  style: GoogleFonts.inter(
-                    color: tsergoColor,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
+        child: InkWell(
+          onTap: () {},
+          child: SizedBox(
+            height: screenSize.height * 36 / 800,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 0.025 * screenSize.width,
+                right: 0.025 * screenSize.width,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Link bank account',
+                    style: GoogleFonts.inter(
+                      color: tsergoColor,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const Icon(
-                  Icons.arrow_forward_sharp,
-                  size: 26.0,
-                  color: Color(0xFF8A2BE2),
-                )
-              ],
+                  const Icon(
+                    Icons.arrow_forward_sharp,
+                    size: 26.0,
+                    color: Color(0xFF8A2BE2),
+                  )
+                ],
+              ),
             ),
           ),
         ),

@@ -15,6 +15,7 @@ class BankTransfer extends StatelessWidget {
       children: [
         Material(
           elevation: 5, // Set the elevation (shadow)
+          color: Colors.transparent,
           shape: const CircleBorder(), // Set the shape to a circle
           child: InkWell(
             onTap: () {},
