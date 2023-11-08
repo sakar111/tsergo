@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
+import 'package:tsergo/home_page/add_new_business.dart';
 import 'package:tsergo/home_page/balance_box.dart';
 import 'package:tsergo/home_page/bank_transfer.dart';
 import 'package:tsergo/home_page/business_card.dart';
@@ -8,6 +9,7 @@ import 'package:tsergo/home_page/link_bank.dart';
 import 'package:tsergo/home_page/user_bar.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 import 'package:tsergo/widgets/tsergo_appbar.dart';
+import 'package:tsergo/widgets/tsergo_bottom_navbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,12 +71,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ]),
                 ),
-              )
+              ),
+              const TsergoAddNewBusiness(),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: NavigationBar(destinations: []),
+      bottomNavigationBar: const TsergoBotomNavigationBar(),
     );
   }
 }

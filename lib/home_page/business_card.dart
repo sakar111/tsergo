@@ -59,7 +59,7 @@ Widget businessDescription(int index) {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Icon(Icons.star_rounded, color: tsergoColor, size: 28.0),
+            const Icon(Icons.star_rounded, color: tsergoColor),
           ],
         )
       ],

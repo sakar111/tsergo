@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/home_page/page_home.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
@@ -123,13 +124,7 @@ class LoginPage extends StatelessWidget {
                       height: screenSize.height * 32 / 800,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomePage(),
-                          ),
-                        );
+                      onPressed: () {GoRouter.of(context).go('/home');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
