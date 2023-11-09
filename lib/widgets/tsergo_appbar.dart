@@ -11,22 +11,15 @@ class TsergoAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       iconTheme: const IconThemeData(size: 38),
 
-      automaticallyImplyLeading: false, // Set this to false
-      title: const Text(
-        'TSERGO',
-        style: TextStyle(
-          fontSize: 30.0,
-          fontFamily: 'CustomFont',
-          color: tsergoColor,
-        ),
-      ),
-      leading: IconButton(
-        icon: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        onPressed: () {},
-      ),
+      automaticallyImplyLeading: true, // Set this to false
+      title: Text('TSERGO', style: tsergoCustomStyle32),
+      // leading: IconButton(
+      //   icon: const Icon(
+      //     Icons.menu,
+      //     color: Colors.black,
+      //   ),
+      //   onPressed: () {},
+      // ),
       actions: [
         IconButton(
           icon: const Icon(
