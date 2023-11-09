@@ -18,7 +18,7 @@ class _TsergoBotomNavigationBarState extends State<TsergoBotomNavigationBar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       elevation: 0.0,
       showSelectedLabels: true,
       showUnselectedLabels: true,

@@ -39,31 +39,14 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: screenSize.height * 16 / 800),
             const TsergoLinkBankAccount(),
             SizedBox(height: screenSize.height * 16 / 800),
-            const Expanded(
-              child: SingleChildScrollView(
-                child: Column(children: [
-                  Businesses(
-                    index: 1,
+            Expanded(
+              child: ListView(
+                children: List.generate(
+                  10,
+                  (index) => Businesses(
+                    index: index,
                   ),
-                  Businesses(
-                    index: 2,
-                  ),
-                  Businesses(
-                    index: 3,
-                  ),
-                  Businesses(
-                    index: 4,
-                  ),
-                  Businesses(
-                    index: 5,
-                  ),
-                  Businesses(
-                    index: 6,
-                  ),
-                  Businesses(
-                    index: 7,
-                  ),
-                ]),
+                ),
               ),
             ),
             const TsergoAddNewBusiness(),

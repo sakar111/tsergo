@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tsergo/constants.dart';
 import 'package:tsergo/pages/transaction_page/dropdown_days.dart';
+import 'package:tsergo/pages/transaction_page/transaction_card.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 
 class TransactionsPage extends StatefulWidget {
@@ -11,9 +13,6 @@ class TransactionsPage extends StatefulWidget {
 }
 
 class _TransactionsPageState extends State<TransactionsPage> {
-  int selectedDays = 7;
-  final List<int> dayOptions = [1, 7, 30, 60];
-
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -35,28 +34,19 @@ class _TransactionsPageState extends State<TransactionsPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: screenSize.height * 10 / 800),
-            TsergoDropDownDays(),
-            Card(
-              child: Material(
-                color: Colors.white,
-                elevation: 4.0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    height: screenSize.height * 120 / 800,
-                    child: Padding(
-                      padding: EdgeInsets.all(screenSize.width *
-                          0.03), // Adjust the padding as needed
-                      child: Row(),
-                    ),
-                  ),
-                ),
-              ),
-            )
+            SizedBox(height: screenSize.height * 20 / 800),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TsergoDropDownDays(),
+                Icon(Icons.local_print_shop,color: tsergoColor, size: 40.0,)
+              ],
+            ),
+            SizedBox(height: screenSize.height * 20 / 800),
+            Expanded(
+                child: ListView(
+                    children: List.generate(
+                        10, (index) => const TsergoTransactionCard())))
           ],
         ),
       ),
