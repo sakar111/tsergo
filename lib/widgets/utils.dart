@@ -36,7 +36,6 @@ class TsergoButton extends StatelessWidget {
   }
 }
 
-
 class TextInputField extends StatelessWidget {
   final String hintText;
   final bool isPassword;
@@ -47,6 +46,7 @@ class TextInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 48 / 800,
+      width: double.infinity,
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -59,16 +59,26 @@ class TextInputField extends StatelessWidget {
           ),
         ],
       ),
-      child: TextField(
-        obscureText: isPassword, // If it's a password field, obscure the text
-        decoration: InputDecoration(
-          hintText: hintText,
-          hintStyle:
-              GoogleFonts.inter(color: const Color(0xFF808080), fontSize: 16.0),
-          border: InputBorder.none,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Expanded(
+          child: Row(
+            children: [
+              TextField(
+                obscureText:
+                    isPassword, // If it's a password field, obscure the text
+                decoration: InputDecoration(
+                  hintText: hintText,
+                  hintStyle: GoogleFonts.inter(
+                      color: const Color(0xFF808080), fontSize: 16.0),
+                  border: InputBorder.none,
+                ),
+                textAlign: TextAlign.left,
+                textAlignVertical: TextAlignVertical.center,
+              )
+            ],
+          ),
         ),
-        textAlign: TextAlign.left,
-        textAlignVertical: TextAlignVertical.center,
       ),
     );
   }

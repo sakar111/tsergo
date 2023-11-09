@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tsergo/constants.dart';
 
 class TsergoAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const TsergoAppBar({super.key});
+  final bool isLoggedIn;
+
+  const TsergoAppBar({super.key, this.isLoggedIn = true});
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +22,17 @@ class TsergoAppBar extends StatelessWidget implements PreferredSizeWidget {
       //   ),
       //   onPressed: () {},
       // ),
-      actions: [
-        IconButton(
-          icon: const Icon(
-            Icons.notifications,
-            color: Colors.black,
-          ),
-          onPressed: () {},
-        ),
-      ],
+      actions: isLoggedIn
+          ? [
+              IconButton(
+                icon: const Icon(
+                  Icons.notifications,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+              ),
+            ]
+          : null,
     );
   }
 
