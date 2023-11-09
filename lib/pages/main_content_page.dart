@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tsergo/pages/home_page/home_page.dart';
+import 'package:tsergo/pages/support_page.dart';
 import 'package:tsergo/pages/transaction_page/transaction_page.dart';
 import 'package:tsergo/widgets/tsergo_appbar.dart';
 import 'package:tsergo/widgets/tsergo_bottom_navbar.dart';
@@ -28,7 +29,7 @@ class _MainContentPageState extends State<MainContentPage> {
         index: _selectedIndex,
         children: const <Widget>[
           HomePage(), // Create and replace with your actual pages/screens
-          SizedBox(child:Text('Support Page')),
+          SupportPage(),
           TransactionsPage(),
           SizedBox(child:Text('Search Page')),
         ],

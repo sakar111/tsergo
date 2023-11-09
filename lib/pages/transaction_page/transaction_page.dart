@@ -19,13 +19,13 @@ class _TransactionsPageState extends State<TransactionsPage> {
 
     return TsergoGradientContainer(
       child: Container(
-        padding: EdgeInsets.only(
-            left: screenSize.width * 0.03, right: screenSize.width * 0.03),
+        padding: EdgeInsets.all(
+            screenSize.width * 0.03),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: screenSize.height * 20 / 800),
+            SizedBox(height: screenSize.height * 10 / 800),
             Text(
               'Transactions History',
               style: GoogleFonts.inter(

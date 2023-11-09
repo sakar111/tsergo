@@ -18,17 +18,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: tsergoColor),
         useMaterial3: true,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFFF2D3FB),
-          // backgroundColor: Colors.white,
-          titleTextStyle: TextStyle(
-            fontSize: 30.0,
-            fontFamily: 'CustomFont',
-            color: Color(0xFF8A2BE2),
-          ),
-          centerTitle: true,
-          iconTheme: IconThemeData(size:38)
-        ),
       ),
       // home: const LoginPage(),
       debugShowCheckedModeBanner: false,

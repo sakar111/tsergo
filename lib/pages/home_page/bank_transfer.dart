@@ -15,13 +15,13 @@ class BankTransfer extends StatelessWidget {
       children: [
         Material(
           elevation: 5, // Set the elevation (shadow)
-          color: Colors.transparent,
+          color: tsergoColor,
           shape: const CircleBorder(), // Set the shape to a circle
           child: InkWell(
             onTap: () {},
-            child: CircleAvatar(
-              radius: screenSize.width * 22 / 360,
-              backgroundColor: tsergoColor,
+            customBorder: const CircleBorder(),
+            child: Padding(
+              padding: EdgeInsets.all(screenSize.width * 0.025),
               child: const Icon(Icons.account_balance,
                   color: Colors.white, size: 35.0),
             ),
