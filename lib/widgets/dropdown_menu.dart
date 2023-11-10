@@ -2,19 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
 
-class TsergoDropDownDays extends StatefulWidget {
-  const TsergoDropDownDays({super.key});
+class TsergoDropDownMenu extends StatefulWidget {
+  final bool isBusinessNotDate;
+
+  const TsergoDropDownMenu({super.key, this.isBusinessNotDate = true});
 
   @override
-  State<TsergoDropDownDays> createState() => _TsergoDropDownDaysState();
+  State<TsergoDropDownMenu> createState() => _TsergoDropDownMenuState();
 }
 
-class _TsergoDropDownDaysState extends State<TsergoDropDownDays> {
-  int _selectedDays = selectedDays;
+class _TsergoDropDownMenuState extends State<TsergoDropDownMenu> {
+  late String _selectedValue;
+  late List<String> _dropDownOptions;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedValue =
+        widget.isBusinessNotDate ? businessType[0] : transactionDaysOptions[0];
+    _dropDownOptions = widget.isBusinessNotDate
+        ? businessType
+        : transactionDaysOptions; // Set the dropdown options
+  }
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
+    final Size screenSize = MediaQuery.of(context).size;
 
     return Container(
       width: screenSize.width * 132 / 360, // Set the desired width
@@ -31,21 +44,21 @@ class _TsergoDropDownDaysState extends State<TsergoDropDownDays> {
       ),
       alignment: Alignment.center,
       child: DropdownButtonHideUnderline(
-        child: DropdownButton<int>(
-          value: _selectedDays,
+        child: DropdownButton<String>(
+          value: _selectedValue,
           icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
           style: const TextStyle(color: Colors.black),
-          onChanged: (int? value) {
+          onChanged: (String? value) {
             setState(() {
-              _selectedDays = value!;
+              _selectedValue = value!;
             });
           },
-          items: transactionDaysOptions.map<DropdownMenuItem<int>>(
-            (int value) {
-              return DropdownMenuItem<int>(
+          items: _dropDownOptions.map<DropdownMenuItem<String>>(
+            (String value) {
+              return DropdownMenuItem<String>(
                 value: value,
                 child: Text(
-                  value==1?'Today':'Last $value days',
+                  value,
                   style: GoogleFonts.inter(fontSize: 14.0),
                 ),
               );

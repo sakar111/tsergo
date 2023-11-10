@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
-import 'package:tsergo/pages/transaction_page/dropdown_days.dart';
+import 'package:tsergo/widgets/dropdown_menu.dart';
 import 'package:tsergo/pages/transaction_page/transaction_card.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 
@@ -38,7 +38,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TsergoDropDownDays(),
+                TsergoDropDownMenu(isBusinessNotDate: false),
                 Icon(Icons.local_print_shop,color: tsergoColor, size: 40.0,)
               ],
             ),
