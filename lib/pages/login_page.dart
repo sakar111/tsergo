@@ -62,7 +62,9 @@ class LoginPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        GoRouter.of(context).push('/forgotPassword1');
+                      },
                       child: Text('Forgot Password?', style: tsergo16Bold),
                       // textAlign: TextAlign.left,
                     ),

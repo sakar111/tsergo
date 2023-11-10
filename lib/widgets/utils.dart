@@ -61,7 +61,7 @@ class TextInputField extends StatelessWidget {
         child: TextField(
           obscureText: isPassword, // If it's a password field, obscure the text
           decoration: InputDecoration(
-            hintText: hintText,
+            labelText: hintText,
             contentPadding: const EdgeInsets.all(8.0),
             hintStyle: GoogleFonts.inter(
                 color: const Color(0xFF808080), fontSize: 16.0),
