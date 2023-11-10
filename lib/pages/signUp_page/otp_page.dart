@@ -14,7 +14,7 @@ class OTPVerification extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const TsergoAppBar(
-        isLoggedIn: false,
+        isMainContentPage: false,
       ),
       body: TsergoGradientContainer(
         child: Padding(
