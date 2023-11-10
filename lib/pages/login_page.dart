@@ -79,18 +79,9 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: screenSize.height * 32 / 800,
                   ),
-                  TextButton(
-                    onPressed: () {
-                      GoRouter.of(context).push('/signup1');
-                    },
-                    child: Text(
-                      'Register',
-                      style: tsergo18Bold,
-                    ),
-                  ),
                   SizedBox(height: screenSize.height * 6 / 800),
                   Text(
-                    'Or',
+                    'Don\'t have an account?',
                     style: GoogleFonts.inter(
                       fontSize: 16.0,
                       color: Colors.black,
@@ -98,13 +89,12 @@ class LoginPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.left,
                   ),
-                  SizedBox(
-                    height: screenSize.height * 6 / 800,
-                  ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GoRouter.of(context).push('/signup1');
+                    },
                     child: Text(
-                      'Sign In with: ',
+                      'Register',
                       style: tsergo18Bold,
                     ),
                   ),
