@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tsergo/constants.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 import 'package:tsergo/widgets/tsergo_appbar.dart';
@@ -18,7 +19,6 @@ class SignUp2 extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(screenSize.width * 54 / 360),
           child: Column(
-
             children: [
               const TextInputField(hintText: 'Enter OTP'),
               Align(
@@ -31,7 +31,10 @@ class SignUp2 extends StatelessWidget {
                   ),
                 ),
               ),
-              const TsergoButton(buttonName: 'Verify', routePath: '/signup3'),
+              TsergoButton(
+                buttonName: 'Verify',
+                onPressed: () => GoRouter.of(context).push('/signup3'),
+              ),
             ],
           ),
         ),

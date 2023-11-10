@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tsergo/constants.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 import 'package:tsergo/widgets/tsergo_appbar.dart';
@@ -49,7 +50,10 @@ class SignUp3 extends StatelessWidget {
                       ),
                     )),
                 SizedBox(height: screenSize.height * 0.05),
-                const TsergoButton(buttonName: 'Sign Up', routePath: '/home'),
+                TsergoButton(
+                  buttonName: 'Sign Up',
+                  onPressed: () => GoRouter.of(context).go('/home'),
+                ),
               ],
             ),
           ),

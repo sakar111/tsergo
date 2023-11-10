@@ -70,13 +70,16 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: screenSize.height * 32 / 800,
                   ),
-                  const TsergoButton(buttonName: 'Sign In', routePath: '/home'),
+                  TsergoButton(
+                    buttonName: 'Sign In',
+                    onPressed: () => GoRouter.of(context).go('/home'),
+                  ),
                   SizedBox(
                     height: screenSize.height * 32 / 800,
                   ),
                   TextButton(
                     onPressed: () {
-                      GoRouter.of(context).go('/signup1');
+                      GoRouter.of(context).push('/signup1');
                     },
                     child: Text(
                       'Register',

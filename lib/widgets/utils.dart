@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
 
 class TsergoButton extends StatelessWidget {
   final String buttonName;
-  final String routePath;
+  final Function? onPressed;
   const TsergoButton(
-      {super.key, required this.buttonName, required this.routePath});
+      {super.key, required this.buttonName, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        GoRouter.of(context).go(routePath);
+        onPressed?.call();
+        // GoRouter.of(context).go(routePath);
       },
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.white,
@@ -62,10 +62,12 @@ class TextInputField extends StatelessWidget {
           obscureText: isPassword, // If it's a password field, obscure the text
           decoration: InputDecoration(
             hintText: hintText,
+            contentPadding: const EdgeInsets.all(8.0),
             hintStyle: GoogleFonts.inter(
                 color: const Color(0xFF808080), fontSize: 16.0),
             border: InputBorder.none,
           ),
+          // keyboardType: TextInputType.phone,
           textAlign: TextAlign.left,
           textAlignVertical: TextAlignVertical.center,
         ),
