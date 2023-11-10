@@ -23,6 +23,11 @@ TextStyle tsergo18Bold = GoogleFonts.inter(
   fontWeight: FontWeight.bold,
 );
 
+TextStyle tsergo18 = GoogleFonts.inter(
+  fontSize: 18.0,
+  color: tsergoColor,
+);
+
 
 TextStyle tsergoCustomStyle32 = const TextStyle(
     fontSize: 32.0, fontFamily: 'CustomFont', color: tsergoColor);
