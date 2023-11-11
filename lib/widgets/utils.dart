@@ -38,37 +38,41 @@ class TsergoButton extends StatelessWidget {
 class TextInputField extends StatelessWidget {
   final String labeltext;
   final bool isPassword;
+  final String initialValue;
   const TextInputField(
-      {super.key, required this.labeltext, this.isPassword = false});
+      {super.key, required this.labeltext, this.isPassword = false, this.initialValue = ''});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 48 / 800,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 2.0,
-            offset: Offset(0, 2),
-          ),
-        ],
-      ),
-      child: SizedBox(
-        child: TextField(
+    // return Container(
+    //   height: MediaQuery.of(context).size.height * 48 / 800,
+    //   decoration: BoxDecoration(
+    //     color: Colors.white,
+    //     borderRadius: BorderRadius.circular(8.0),
+    //     boxShadow: const [
+    //       BoxShadow(
+    //         color: Colors.grey,
+    //         blurRadius: 2.0,
+    //         offset: Offset(0, 2),
+    //       ),
+    //     ],
+    //   ),
+    //   child: SizedBox(
+        // child: 
+        return TextFormField(
           obscureText: isPassword, // If it's a password field, obscure the text
+          initialValue: initialValue,
           decoration: InputDecoration(
+            fillColor: Colors.white,filled: true,
             labelText: labeltext,
             contentPadding: const EdgeInsets.all(8.0),
-            border: InputBorder.none,
+            border: const OutlineInputBorder(),
           ),
           // keyboardType: TextInputType.phone,
           textAlign: TextAlign.left,
           textAlignVertical: TextAlignVertical.center,
-        ),
-      ),
+      //   ),
+      // ),
     );
   }
 }

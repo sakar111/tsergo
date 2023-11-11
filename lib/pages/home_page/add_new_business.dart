@@ -17,7 +17,8 @@ class TsergoAddNewBusiness extends StatelessWidget {
           children: [
             const Spacer(),
             InkWell(
-              onTap: () => GoRouter.of(context).push('/addNewBusiness'),
+              onTap: () => context.pushNamed('addEditBusiness',
+                  pathParameters: {'isAddBusiness': 'true'}),
               child: Row(
                 children: [
                   const Icon(

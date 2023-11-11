@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
 
@@ -84,7 +85,8 @@ class Businesses extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () => context.pushNamed('addEditBusiness',
+              pathParameters: {'isAddBusiness': 'false'}),
           child: SizedBox(
             height: screenSize.height * 120 / 800,
             child: Padding(

@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:tsergo/pages/add_new_business_page.dart';
+import 'package:tsergo/pages/add_edit_business_page.dart';
 import 'package:tsergo/pages/login_page.dart';
 import 'package:tsergo/pages/main_content_page.dart';
 import 'package:tsergo/pages/signUp_page/sign_up3.dart';
@@ -31,7 +31,11 @@ final GoRouter router = GoRouter(
               isForgotPassword: state.pathParameters['isForgotPassword']);
         }),
     GoRoute(
-        path: '/addNewBusiness',
-        builder: (context, state) => const AddNewBusiness()),
+        path: '/addEditBusiness/:isAddBusiness',
+        name: 'addEditBusiness',
+        builder: (context, state) {
+          return AddEditBusiness(
+              isAddBusiness: state.pathParameters['isAddBusiness']);
+        }),
   ],
 );

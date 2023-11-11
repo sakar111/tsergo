@@ -6,11 +6,26 @@ import 'package:tsergo/widgets/tsergo_appbar.dart';
 import 'package:tsergo/widgets/utils.dart';
 import 'package:tsergo/widgets/dropdown_menu.dart';
 
-class AddNewBusiness extends StatelessWidget {
-  const AddNewBusiness({Key? key}) : super(key: key);
+class AddEditBusiness extends StatelessWidget {
+  final String? isAddBusiness;
+  const AddEditBusiness({super.key, this.isAddBusiness = 'true'});
 
   @override
   Widget build(BuildContext context) {
+
+    // get business details from database if isAddBusiness is false
+    const String businessName = 'Tsergo 10 star hotel';
+
+    const List<Widget> widgetList = [
+      TextInputField(labeltext: 'Business Name', initialValue: businessName),
+      TextInputField(labeltext: 'Location (City)'),
+      TextInputField(labeltext: 'Location (Street)'),
+      TextInputField(labeltext: 'Contact Number'),
+      TextInputField(labeltext: 'Email (optional)'),
+      TextInputField(labeltext: 'Website (optional)'),
+      TextInputField(labeltext: 'Google Maps Link'),
+    ];
+
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const TsergoAppBar(isMainContentPage: false),
@@ -21,7 +36,7 @@ class AddNewBusiness extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Add New Business',
+                isAddBusiness == 'true' ? 'Add New Business' : 'Edit Business',
                 style: GoogleFonts.inter(
                   fontSize: 26.0,
                   color: Colors.black,
@@ -90,13 +105,3 @@ class AddNewBusiness extends StatelessWidget {
     );
   }
 }
-
-const List<Widget> widgetList = [
-  TextInputField(labeltext: 'Business Name'),
-  TextInputField(labeltext: 'Location (City)'),
-  TextInputField(labeltext: 'Location (Street)'),
-  TextInputField(labeltext: 'Contact Number'),
-  TextInputField(labeltext: 'Email (optional)'),
-  TextInputField(labeltext: 'Website (optional)'),
-  TextInputField(labeltext: 'Google Maps Link'),
-];
