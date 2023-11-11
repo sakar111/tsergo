@@ -38,7 +38,7 @@ class TsergoButton extends StatelessWidget {
 class TextInputField extends StatelessWidget {
   final String labeltext;
   final bool isPassword;
-  final String initialValue;
+  final String? initialValue;
   const TextInputField(
       {super.key, required this.labeltext, this.isPassword = false, this.initialValue = ''});
 

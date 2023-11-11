@@ -85,8 +85,6 @@ class Businesses extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: InkWell(
-          // onTap: () => context.pushNamed('addEditBusiness',
-          //     pathParameters: {'isAddBusiness': 'false'}),
           onTap: () => GoRouter.of(context).push('/businessDetails'),
           child: SizedBox(
             height: screenSize.height * 120 / 800,

@@ -13,17 +13,7 @@ class AddEditBusiness extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // get business details from database if isAddBusiness is false
-    const String businessName = 'Tsergo 10 star hotel';
-
-    const List<Widget> widgetList = [
-      TextInputField(labeltext: 'Business Name', initialValue: businessName),
-      TextInputField(labeltext: 'Location (City)'),
-      TextInputField(labeltext: 'Location (Street)'),
-      TextInputField(labeltext: 'Contact Number'),
-      TextInputField(labeltext: 'Email (optional)'),
-      TextInputField(labeltext: 'Website (optional)'),
-      TextInputField(labeltext: 'Google Maps Link'),
-    ];
+    final List<String> detailTitles = businessDetails.keys.toList();
 
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
@@ -56,12 +46,17 @@ class AddEditBusiness extends StatelessWidget {
                         SizedBox(height: screenSize.height * 0.03),
                         ListView.separated(
                           itemBuilder: (context, index) {
-                            return widgetList[index];
+                            return TextInputField(
+                              labeltext: detailTitles[index],
+                              initialValue: isAddBusiness == 'false'
+                                  ? businessDetails[detailTitles[index]]
+                                  : '',
+                            );
                           },
                           separatorBuilder: (context, index) {
                             return SizedBox(height: screenSize.height * 0.03);
                           },
-                          itemCount: widgetList.length,
+                          itemCount: detailTitles.length,
                           shrinkWrap:
                               true, // Add this line to make the ListView scrollable inside a Column
                         ),
