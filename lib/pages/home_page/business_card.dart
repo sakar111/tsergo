@@ -21,7 +21,7 @@ Widget businessImage(Size screenSize) {
     child: ClipRRect(
       borderRadius: BorderRadius.circular(10.0),
       child: Image.asset(
-        'assets/images/hotel.png', // Replace with your hotel image asset
+        'assets/images/hotelSample/hotelSample2.png', // Replace with your hotel image asset
         fit: BoxFit.cover, // Adjust the BoxFit as needed
       ),
     ),
@@ -85,8 +85,7 @@ class Businesses extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: InkWell(
-          onTap: () => context.pushNamed('addEditBusiness',
-              pathParameters: {'isAddBusiness': 'false'}),
+          onTap: () => GoRouter.of(context).push('/businessDetails'),
           child: SizedBox(
             height: screenSize.height * 120 / 800,
             child: Padding(
