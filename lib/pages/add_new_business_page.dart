@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tsergo/constants.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 import 'package:tsergo/widgets/tsergo_appbar.dart';
 import 'package:tsergo/widgets/utils.dart';
+import 'package:tsergo/widgets/dropdown_menu.dart';
 
 class AddNewBusiness extends StatelessWidget {
   const AddNewBusiness({Key? key}) : super(key: key);
@@ -33,7 +35,11 @@ class AddNewBusiness extends StatelessWidget {
                         horizontal: screenSize.width * 0.12),
                     child: Column(
                       children: [
-                        SizedBox(height: screenSize.height * 0.05),
+                        SizedBox(height: screenSize.height * 0.03),
+                        const Align(
+                            alignment: Alignment.centerLeft,
+                            child: TsergoDropDownMenu(isBusinessNotDate: true)),
+                        SizedBox(height: screenSize.height * 0.03),
                         ListView.separated(
                           itemBuilder: (context, index) {
                             return widgetList[index];
@@ -44,6 +50,33 @@ class AddNewBusiness extends StatelessWidget {
                           itemCount: widgetList.length,
                           shrinkWrap:
                               true, // Add this line to make the ListView scrollable inside a Column
+                        ),
+                        SizedBox(height: screenSize.height * 0.03),
+                        ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              foregroundColor: tsergoColor,
+                              surfaceTintColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              elevation: 4.0,
+                            ),
+                            child: SizedBox(
+                              height: screenSize.height * 0.06,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  const Icon(Icons.upload_file_sharp),
+                                  Text('Upload Photos (0/3)', style: tsergo18)
+                                ],
+                              ),
+                            )),
+                        SizedBox(height: screenSize.height * 0.05),
+                        TsergoButton(
+                          buttonName: 'Done',
+                          onPressed: () {},
                         ),
                       ],
                     ),
@@ -59,11 +92,11 @@ class AddNewBusiness extends StatelessWidget {
 }
 
 const List<Widget> widgetList = [
-  TextInputField(hintText: 'Business Name'),
-  TextInputField(hintText: 'Location (City)'),
-  TextInputField(hintText: 'Location (Street)'),
-  TextInputField(hintText: 'Contact Number'),
-  TextInputField(hintText: 'Email (optional)'),
-  TextInputField(hintText: 'Website (optional)'),
-  TextInputField(hintText: 'Google Maps Link'),
+  TextInputField(labeltext: 'Business Name'),
+  TextInputField(labeltext: 'Location (City)'),
+  TextInputField(labeltext: 'Location (Street)'),
+  TextInputField(labeltext: 'Contact Number'),
+  TextInputField(labeltext: 'Email (optional)'),
+  TextInputField(labeltext: 'Website (optional)'),
+  TextInputField(labeltext: 'Google Maps Link'),
 ];

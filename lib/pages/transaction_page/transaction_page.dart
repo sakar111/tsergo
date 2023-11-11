@@ -19,8 +19,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
 
     return TsergoGradientContainer(
       child: Container(
-        padding: EdgeInsets.all(
-            screenSize.width * 0.03),
+        padding: EdgeInsets.all(screenSize.width * 0.03),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +38,11 @@ class _TransactionsPageState extends State<TransactionsPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TsergoDropDownMenu(isBusinessNotDate: false),
-                Icon(Icons.local_print_shop,color: tsergoColor, size: 40.0,)
+                Icon(
+                  Icons.local_print_shop,
+                  color: tsergoColor,
+                  size: 40.0,
+                )
               ],
             ),
             SizedBox(height: screenSize.height * 20 / 800),

@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: tsergoColor),
         useMaterial3: true,
+        inputDecorationTheme: const InputDecorationTheme(
+            labelStyle: TextStyle(color: Colors.grey),
+            hintStyle: TextStyle(color: tsergoColor),)
       ),
       // home: const LoginPage(),
       debugShowCheckedModeBanner: false,

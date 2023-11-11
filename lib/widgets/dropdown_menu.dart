@@ -59,7 +59,7 @@ class _TsergoDropDownMenuState extends State<TsergoDropDownMenu> {
                 value: value,
                 child: Text(
                   value,
-                  style: GoogleFonts.inter(fontSize: 14.0),
+                  style: GoogleFonts.inter(fontSize: 16.0),
                 ),
               );
             },

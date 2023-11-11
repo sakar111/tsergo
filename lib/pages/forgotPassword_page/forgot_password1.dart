@@ -19,7 +19,7 @@ class ForgotPassword1 extends StatelessWidget {
           padding: EdgeInsets.all(screenSize.width * 54 / 360),
           child: Column(
             children: [
-              const TextInputField(hintText: 'Phone Number'),
+              const TextInputField(labeltext: 'Phone Number'),
               SizedBox(height: screenSize.height * 0.05),
               TsergoButton(
                 buttonName: 'Send OTP',

@@ -21,7 +21,7 @@ class OTPVerification extends StatelessWidget {
           padding: EdgeInsets.all(screenSize.width * 54 / 360),
           child: Column(
             children: [
-              const TextInputField(hintText: 'Enter OTP'),
+              const TextInputField(labeltext: 'Enter OTP'),
               Align(
                 alignment: Alignment.centerLeft,
                 child: TextButton(
