@@ -12,14 +12,14 @@ class ForgotPassword1 extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const TsergoAppBar(
-        isLoggedIn: false,
+        isMainContentPage: false,
       ),
       body: TsergoGradientContainer(
         child: Padding(
           padding: EdgeInsets.all(screenSize.width * 54 / 360),
           child: Column(
             children: [
-              const TextInputField(hintText: 'Phone Number'),
+              const TextInputField(labeltext: 'Phone Number'),
               SizedBox(height: screenSize.height * 0.05),
               TsergoButton(
                 buttonName: 'Send OTP',

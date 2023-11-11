@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
 
@@ -16,7 +17,7 @@ class TsergoAddNewBusiness extends StatelessWidget {
           children: [
             const Spacer(),
             InkWell(
-              onTap: () {},
+              onTap: () => GoRouter.of(context).push('/addNewBusiness'),
               child: Row(
                 children: [
                   const Icon(

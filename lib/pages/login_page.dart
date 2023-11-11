@@ -47,13 +47,13 @@ class LoginPage extends StatelessWidget {
                     height: screenSize.height * 60 / 800,
                   ),
                   const TextInputField(
-                    hintText: 'Username',
+                    labeltext: 'Username',
                   ),
                   SizedBox(
                     height: screenSize.height * 24 / 800,
                   ),
                   const TextInputField(
-                    hintText: 'Password',
+                    labeltext: 'Password',
                     isPassword: true,
                   ),
                   SizedBox(

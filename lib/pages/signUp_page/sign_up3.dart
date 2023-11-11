@@ -13,7 +13,7 @@ class SignUp3 extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const TsergoAppBar(
-        isLoggedIn: false,
+        isMainContentPage: false,
       ),
       body: TsergoGradientContainer(
         child: SingleChildScrollView(
@@ -21,13 +21,13 @@ class SignUp3 extends StatelessWidget {
             padding: EdgeInsets.all(screenSize.width * 54 / 360),
             child: Column(
               children: [
-                const TextInputField(hintText: 'Full Name'),
+                const TextInputField(labeltext: 'Full Name'),
                 SizedBox(height: screenSize.height * 0.03),
-                const TextInputField(hintText: 'Choose a UserName'),
+                const TextInputField(labeltext: 'Choose a UserName'),
                 SizedBox(height: screenSize.height * 0.03),
-                const TextInputField(hintText: 'Choose a strong password'),
+                const TextInputField(labeltext: 'Choose a strong password'),
                 SizedBox(height: screenSize.height * 0.03),
-                const TextInputField(hintText: 'Confirm Password'),
+                const TextInputField(labeltext: 'Confirm Password'),
                 SizedBox(height: screenSize.height * 0.05),
                 ElevatedButton(
                     onPressed: () {},

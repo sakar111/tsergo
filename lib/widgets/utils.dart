@@ -5,8 +5,7 @@ import 'package:tsergo/constants.dart';
 class TsergoButton extends StatelessWidget {
   final String buttonName;
   final Function? onPressed;
-  const TsergoButton(
-      {super.key, required this.buttonName, this.onPressed});
+  const TsergoButton({super.key, required this.buttonName, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +36,10 @@ class TsergoButton extends StatelessWidget {
 }
 
 class TextInputField extends StatelessWidget {
-  final String hintText;
+  final String labeltext;
   final bool isPassword;
   const TextInputField(
-      {super.key, required this.hintText, this.isPassword = false});
+      {super.key, required this.labeltext, this.isPassword = false});
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +60,8 @@ class TextInputField extends StatelessWidget {
         child: TextField(
           obscureText: isPassword, // If it's a password field, obscure the text
           decoration: InputDecoration(
-            labelText: hintText,
+            labelText: labeltext,
             contentPadding: const EdgeInsets.all(8.0),
-            hintStyle: GoogleFonts.inter(
-                color: const Color(0xFF808080), fontSize: 16.0),
             border: InputBorder.none,
           ),
           // keyboardType: TextInputType.phone,
