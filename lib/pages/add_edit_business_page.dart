@@ -12,7 +12,6 @@ class AddEditBusiness extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // get business details from database if isAddBusiness is false
     const String businessName = 'Tsergo 10 star hotel';
 
@@ -66,28 +65,34 @@ class AddEditBusiness extends StatelessWidget {
                           shrinkWrap:
                               true, // Add this line to make the ListView scrollable inside a Column
                         ),
-                        SizedBox(height: screenSize.height * 0.03),
-                        ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              foregroundColor: tsergoColor,
-                              surfaceTintColor: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                        Visibility(
+                          visible: isAddBusiness == 'true',
+                          child: Column(children: [
+                            SizedBox(height: screenSize.height * 0.03),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: tsergoColor,
+                                surfaceTintColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                elevation: 4.0,
                               ),
-                              elevation: 4.0,
+                              child: SizedBox(
+                                height: screenSize.height * 0.06,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    const Icon(Icons.upload_file_sharp),
+                                    Text('Upload Photos (0/3)', style: tsergo18)
+                                  ],
+                                ),
+                              ),
                             ),
-                            child: SizedBox(
-                              height: screenSize.height * 0.06,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  const Icon(Icons.upload_file_sharp),
-                                  Text('Upload Photos (0/3)', style: tsergo18)
-                                ],
-                              ),
-                            )),
+                          ]),
+                        ),
                         SizedBox(height: screenSize.height * 0.05),
                         TsergoButton(
                           buttonName: 'Done',
