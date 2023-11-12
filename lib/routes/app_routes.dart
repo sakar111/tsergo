@@ -5,11 +5,13 @@ import 'package:tsergo/pages/business_details_page.dart';
 import 'package:tsergo/pages/link_bank_account_page.dart';
 import 'package:tsergo/pages/login_page.dart';
 import 'package:tsergo/pages/main_content_page.dart';
+import 'package:tsergo/pages/side_menu.dart';
 import 'package:tsergo/pages/signUp_page/sign_up3.dart';
 import 'package:tsergo/pages/signUp_page/sign_up1.dart';
 import 'package:tsergo/pages/signUp_page/otp_page.dart';
 import 'package:tsergo/pages/transaction_page/transaction_page.dart';
 import 'package:tsergo/pages/forgotPassword_page/forgot_password1.dart';
+import 'package:tsergo/pages/view_profile_page.dart';
 
 final GoRouter router = GoRouter(
   routes: [
@@ -49,5 +51,9 @@ final GoRouter router = GoRouter(
     GoRoute(
         path: '/bankTransfer',
         builder: (context, state) => const BankTransferPage()),
+    GoRoute(path: '/sideMenu', builder: (context, state) => const SideMenu()),
+    GoRoute(
+        path: '/viewProfile',
+        builder: (context, state) => const ViewProfilePage()),
   ],
 );

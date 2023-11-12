@@ -36,7 +36,7 @@ class _MainContentPageState extends State<MainContentPage> {
         ],
       ),
       bottomNavigationBar: TsergoBotomNavigationBar(selectedIndex: _selectedIndex,onItemTapped: _onItemTapped,),
-      drawer: SideMenu(),
+      // drawer: SideMenu(),
     );
   }
 }

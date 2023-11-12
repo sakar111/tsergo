@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:tsergo/constants.dart';
 import 'package:tsergo/widgets/color_gradient.dart';
 import 'package:tsergo/widgets/tsergo_appbar.dart';
 import 'package:tsergo/widgets/user_circular_image.dart';
 
-class SideMenu extends StatelessWidget {
-  const SideMenu({super.key});
+class ViewProfilePage extends StatelessWidget {
+  const ViewProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,30 +46,19 @@ class SideMenu extends StatelessWidget {
                   ],
                 ),
               ),
-              Card(
-                color: Colors.white,
-                surfaceTintColor: Colors.white,
-                child: ListTile(
-                    title: Text(
-                      'View Profile',
-                      style: inter16Bold,
-                    ),
-                    onTap: () => GoRouter.of(context).go('/viewProfile')),
-              ),
-              Card(
-                color: Colors.white,
-                surfaceTintColor: Colors.white,
-                child: ListTile(
-                  title: Text(
-                    'Logout',
-                    style: inter16Bold,
-                  ),
-                  onTap: () {
-                    GoRouter.of(context).go('/');
-                    // Update the state of the app.
-                    // ...
-                  },
+              ListTile(
+                title: Text(
+                  'Username',
+                  style: inter16Bold,
                 ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text(
+                  'First Middle Last',
+                  style: inter16Bold,
+                ),
+                onTap: () {},
               )
             ],
           ),
