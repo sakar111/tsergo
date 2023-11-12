@@ -5,6 +5,7 @@ import 'package:tsergo/pages/business_details_page.dart';
 import 'package:tsergo/pages/link_bank_account_page.dart';
 import 'package:tsergo/pages/login_page.dart';
 import 'package:tsergo/pages/main_content_page.dart';
+import 'package:tsergo/pages/notification_page/notification_page.dart';
 import 'package:tsergo/pages/side_menu.dart';
 import 'package:tsergo/pages/signUp_page/sign_up3.dart';
 import 'package:tsergo/pages/signUp_page/sign_up1.dart';
@@ -55,5 +56,8 @@ final GoRouter router = GoRouter(
     GoRoute(
         path: '/viewProfile',
         builder: (context, state) => const ViewProfilePage()),
+    GoRoute(
+        path: '/notificationPage',
+        builder: (context, state) => const NotificationPage())
   ],
 );
