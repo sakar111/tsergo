@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tsergo/constants.dart';
 
 class TsergoAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -15,13 +16,15 @@ class TsergoAppBar extends StatelessWidget implements PreferredSizeWidget {
 
       automaticallyImplyLeading: true, // Set this to false
       title: Text('TSERGO', style: tsergoCustomStyle32),
-      // leading: IconButton(
-      //   icon: const Icon(
-      //     Icons.menu,
-      //     color: Colors.black,
-      //   ),
-      //   onPressed: () {},
-      // ),
+      leading: isMainContentPage
+          ? IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+              onPressed: () => GoRouter.of(context).push('/sideMenu'),
+            )
+          : null,
       actions: isMainContentPage
           ? [
               IconButton(
