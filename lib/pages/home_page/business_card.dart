@@ -36,18 +36,15 @@ Widget businessDescription(int index) {
       children: [
         Text(
           'Hotel Name',
-          style: GoogleFonts.inter(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-          ),
+          style: tsergo14
         ),
         Text(
           'Location: City, Country',
-          style: GoogleFonts.inter(fontSize: 14.0),
+          style: tsergo14,
         ),
         Text(
           'Price: \$100 per night',
-          style: GoogleFonts.inter(fontSize: 14.0),
+          style: tsergo14
         ),
         const Spacer(),
         Row(
@@ -56,11 +53,7 @@ Widget businessDescription(int index) {
           children: [
             Text(
               '4.7',
-              style: GoogleFonts.inter(
-                color: tsergoColor,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
+              style: tsergo18Bold
             ),
             const Icon(Icons.star_rounded, color: tsergoColor),
           ],

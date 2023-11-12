@@ -38,7 +38,6 @@ class _BusinessDetailsState extends State<BusinessDetails> {
     'assets/images/hotelSample/hotelSample4.png',
   ];
 
-
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -144,7 +143,10 @@ class _BusinessDetailsState extends State<BusinessDetails> {
                                   children: [
                                     TextSpan(
                                       text: detailValue,
-                                      style: tsergo16,
+                                      style: GoogleFonts.inter(
+                                        fontSize: 14.0,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -164,7 +166,8 @@ class _BusinessDetailsState extends State<BusinessDetails> {
                           alignment: Alignment.topRight,
                           child: IconButton(
                             icon: Icon(Icons.edit),
-                            onPressed: () => context.pushNamed('addEditBusiness',
+                            onPressed: () => context.pushNamed(
+                                'addEditBusiness',
                                 pathParameters: {'isAddBusiness': 'false'}),
                           ),
                         ),
