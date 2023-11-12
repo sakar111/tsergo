@@ -41,8 +41,10 @@ class AddEditBusiness extends StatelessWidget {
                       children: [
                         SizedBox(height: screenSize.height * 0.03),
                         const Align(
-                            alignment: Alignment.centerLeft,
-                            child: TsergoDropDownMenu(isBusinessNotDate: true)),
+                          alignment: Alignment.centerLeft,
+                          child: TsergoDropDownMenu(
+                              dropDownOptions: businessCategory),
+                        ),
                         SizedBox(height: screenSize.height * 0.03),
                         ListView.separated(
                           itemBuilder: (context, index) {

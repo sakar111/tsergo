@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:tsergo/pages/add_edit_business_page.dart';
+import 'package:tsergo/pages/bank_transfer_page.dart';
 import 'package:tsergo/pages/business_details_page.dart';
+import 'package:tsergo/pages/link_bank_account_page.dart';
 import 'package:tsergo/pages/login_page.dart';
 import 'package:tsergo/pages/main_content_page.dart';
 import 'package:tsergo/pages/signUp_page/sign_up3.dart';
@@ -41,5 +43,11 @@ final GoRouter router = GoRouter(
     GoRoute(
         path: '/businessDetails',
         builder: (context, state) => const BusinessDetails()),
+    GoRoute(
+        path: '/linkBankAccount',
+        builder: (context, state) => const LinkBankAccount()),
+    GoRoute(
+        path: '/bankTransfer',
+        builder: (context, state) => const BankTransferPage()),
   ],
 );

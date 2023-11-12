@@ -8,11 +8,17 @@ const List<String> transactionDaysOptions = [
   'Last 7 days',
   'Last 15 days',
   'Last 30 days',
-]; //5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; // Customize these options
+];
 
-const List<String> businessType = [
+const List<String> businessCategory = [
   'Hotel',
   'Restaurant',
+];
+
+const List<String> bankAccountOptions = [
+  'Bank Account 1',
+  'Bank Account 2',
+  'Bank Account 3',
 ];
 
 TextStyle tsergo16Bold = GoogleFonts.inter(
@@ -21,10 +27,7 @@ TextStyle tsergo16Bold = GoogleFonts.inter(
   fontWeight: FontWeight.bold,
 );
 
-TextStyle tsergo16 = GoogleFonts.inter(
-  fontSize: 16.0,
-  color: Colors.black,
-);
+TextStyle tsergo14 = GoogleFonts.inter(fontSize: 14.0, color: Colors.black);
 
 TextStyle tsergo18Bold = GoogleFonts.inter(
   fontSize: 18.0,

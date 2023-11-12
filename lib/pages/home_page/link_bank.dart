@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
+import 'package:go_router/go_router.dart';
 
 class TsergoLinkBankAccount extends StatelessWidget {
   const TsergoLinkBankAccount({super.key});
@@ -17,7 +18,9 @@ class TsergoLinkBankAccount extends StatelessWidget {
               10.0), // Adjust the radius for rounded edges
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            GoRouter.of(context).push('/linkBankAccount');
+          },
           child: SizedBox(
             height: screenSize.height * 36 / 800,
             child: Padding(

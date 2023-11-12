@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tsergo/constants.dart';
 
@@ -18,7 +19,9 @@ class BankTransfer extends StatelessWidget {
           color: tsergoColor,
           shape: const CircleBorder(), // Set the shape to a circle
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push('/bankTransfer');
+            },
             customBorder: const CircleBorder(),
             child: Padding(
               padding: EdgeInsets.all(screenSize.width * 0.025),

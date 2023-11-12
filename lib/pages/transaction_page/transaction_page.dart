@@ -37,7 +37,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TsergoDropDownMenu(isBusinessNotDate: false),
+                TsergoDropDownMenu(dropDownOptions: transactionDaysOptions),
                 Icon(
                   Icons.local_print_shop,
                   color: tsergoColor,
