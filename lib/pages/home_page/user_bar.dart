@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tsergo/widgets/user_circular_image.dart';
 
 class TsergoUserBar extends StatelessWidget {
   const TsergoUserBar({super.key});
@@ -9,18 +10,9 @@ class TsergoUserBar extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
     return Row(
       children: [
-        Container(
-          height: screenSize.width * 50 / 360,
-          width: screenSize.width * 50 / 360,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage('assets/images/sakar.png'),
-            ),
-          ),
-        ),
+        const UserCircularImage(imageRatio: 0.2),
         SizedBox(width: screenSize.width * 0.03), // Add some spacing
-        Text('Username',
+        Text('Sakar_Pathak',
             style: GoogleFonts.inter(
                 color: Colors.black,
                 fontSize: 22.0,

@@ -27,6 +27,12 @@ TextStyle tsergo16Bold = GoogleFonts.inter(
   fontWeight: FontWeight.bold,
 );
 
+TextStyle inter16Bold = GoogleFonts.inter(
+  fontSize: 16.0,
+  color: Colors.black,
+  fontWeight: FontWeight.bold,
+);
+
 TextStyle tsergo14 = GoogleFonts.inter(fontSize: 14.0, color: Colors.black);
 
 TextStyle tsergo18Bold = GoogleFonts.inter(
