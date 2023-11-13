@@ -32,7 +32,7 @@ class TsergoAppBar extends StatelessWidget implements PreferredSizeWidget {
                   Icons.notifications,
                   color: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: () => GoRouter.of(context).push('/notificationPage'),
               ),
             ]
           : null,

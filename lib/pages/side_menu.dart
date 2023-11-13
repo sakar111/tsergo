@@ -55,7 +55,7 @@ class SideMenu extends StatelessWidget {
                       'View Profile',
                       style: inter16Bold,
                     ),
-                    onTap: () => GoRouter.of(context).go('/viewProfile')),
+                    onTap: () => GoRouter.of(context).push('/viewProfile')),
               ),
               Card(
                 color: Colors.white,
