@@ -15,20 +15,24 @@ class NotificationPage extends StatelessWidget {
       body: TsergoGradientContainer(
         child: Container(
           padding: EdgeInsets.all(screenSize.width * 0.03),
-          child: Column(children: [
-            SizedBox(height: screenSize.height * 10 / 800),
-            Text(
-              'Notifications',
-              style: GoogleFonts.inter(
-                  fontSize: 26.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold),
-            ),
-            TsergoNotificationCard(),
-            ListView(
-                children: List.generate(
-                    1, (index) => const TsergoNotificationCard()))
-          ]),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: screenSize.height * 10 / 800),
+                Text(
+                  'Notification',
+                  style: GoogleFonts.inter(
+                      fontSize: 26.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
+                Expanded(
+                  child: ListView(
+                      children: List.generate(
+                          20, (index) => const TsergoNotificationCard())),
+                )
+              ]),
         ),
       ),
     );
